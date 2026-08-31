@@ -92,6 +92,17 @@ for (const [model, m] of Object.entries(byModel)) {
   console.log(`${model}: ${m.passed}/${m.total} (in ${m.tokens.in} / out ${m.tokens.out} tokens)`)
 }
 
+// A run where every call errored is an outage/auth problem, not Index data.
+// Record it separately and never overwrite a good daily record with it.
+if (results.every((r) => r.error)) {
+  const outDir = join(here, 'data', 'runs')
+  await mkdir(outDir, { recursive: true })
+  const failFile = join(outDir, `${date}.failed.json`)
+  await writeFile(failFile, JSON.stringify({ date, battery: battery.version, models, results }, null, 2) + '\n')
+  console.error(`all calls failed — wrote ${failFile}, skipping run file and graph write`)
+  process.exit(1)
+}
+
 const run = {
   date,
   ranAt: new Date().toISOString(),
