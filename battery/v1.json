@@ -47,7 +47,7 @@
       "id": "constraint_no_e",
       "category": "instruction",
       "prompt": "Write a single sentence about the sky, at least six words long, that does not contain the letter 'e' anywhere. Reply with only the sentence.",
-      "scorer": { "type": "regex", "pattern": "^(?=[^eE]*$)(?=.*sky).{20,}$", "flags": "s" }
+      "scorer": { "type": "regex", "pattern": "^(?=[^eE]*$)(?=.*sky).{20,}$", "flags": "is" }
     },
     {
       "id": "exact_word_count",

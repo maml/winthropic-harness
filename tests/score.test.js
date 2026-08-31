@@ -4,9 +4,10 @@ import { score } from '../lib/score.js'
 
 const t = (scorer) => ({ id: 'x', category: 'x', scorer })
 
-test('exact: normalizes case, whitespace, trailing period', () => {
+test('exact: normalizes case, whitespace, trailing period, markdown emphasis', () => {
   const task = t({ type: 'exact', expected: 'Bob' })
   assert.equal(score(task, ' bob.\n'), true)
+  assert.equal(score(task, '**Bob**'), true)
   assert.equal(score(task, 'The liar is Bob'), false)
 })
 
@@ -24,8 +25,9 @@ test('regex: applied to trimmed raw output', () => {
 })
 
 test('regex: no-letter-e constraint with lookaheads', () => {
-  const task = t({ type: 'regex', pattern: '^(?=[^eE]*$)(?=.*sky).{20,}$', flags: 's' })
+  const task = t({ type: 'regex', pattern: '^(?=[^eE]*$)(?=.*sky).{20,}$', flags: 'is' })
   assert.equal(score(task, 'A vast sky hangs high atop all towns'), true)
+  assert.equal(score(task, 'Sky is dark, birds fly at dawn again'), true)
   assert.equal(score(task, 'The sky is very blue over the meadow'), false)
 })
 

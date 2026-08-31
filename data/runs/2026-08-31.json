@@ -1,27 +1,125 @@
 {
   "date": "2026-08-31",
-  "ranAt": "2026-08-31T16:10:29.789Z",
+  "ranAt": "2026-08-31T16:20:16.450Z",
   "battery": "v1",
   "models": [
-    "claude-haiku-4-5-20251001"
+    "claude-haiku-4-5-20251001",
+    "claude-sonnet-5",
+    "claude-opus-5"
   ],
   "byModel": {
     "claude-haiku-4-5-20251001": {
-      "passed": 3,
-      "total": 3,
+      "passed": 11,
+      "total": 12,
       "byCategory": {
         "math": {
           "passed": 2,
           "total": 2
         },
         "instruction": {
+          "passed": 3,
+          "total": 4
+        },
+        "extraction": {
           "passed": 1,
           "total": 1
+        },
+        "reasoning": {
+          "passed": 1,
+          "total": 1
+        },
+        "classification": {
+          "passed": 1,
+          "total": 1
+        },
+        "json": {
+          "passed": 1,
+          "total": 1
+        },
+        "code": {
+          "passed": 2,
+          "total": 2
         }
       },
       "tokens": {
-        "in": 111,
-        "out": 17
+        "in": 546,
+        "out": 202
+      }
+    },
+    "claude-sonnet-5": {
+      "passed": 12,
+      "total": 12,
+      "byCategory": {
+        "math": {
+          "passed": 2,
+          "total": 2
+        },
+        "instruction": {
+          "passed": 4,
+          "total": 4
+        },
+        "extraction": {
+          "passed": 1,
+          "total": 1
+        },
+        "reasoning": {
+          "passed": 1,
+          "total": 1
+        },
+        "classification": {
+          "passed": 1,
+          "total": 1
+        },
+        "json": {
+          "passed": 1,
+          "total": 1
+        },
+        "code": {
+          "passed": 2,
+          "total": 2
+        }
+      },
+      "tokens": {
+        "in": 692,
+        "out": 944
+      }
+    },
+    "claude-opus-5": {
+      "passed": 12,
+      "total": 12,
+      "byCategory": {
+        "math": {
+          "passed": 2,
+          "total": 2
+        },
+        "instruction": {
+          "passed": 4,
+          "total": 4
+        },
+        "extraction": {
+          "passed": 1,
+          "total": 1
+        },
+        "reasoning": {
+          "passed": 1,
+          "total": 1
+        },
+        "classification": {
+          "passed": 1,
+          "total": 1
+        },
+        "json": {
+          "passed": 1,
+          "total": 1
+        },
+        "code": {
+          "passed": 2,
+          "total": 2
+        }
+      },
+      "tokens": {
+        "in": 692,
+        "out": 608
       }
     }
   },
@@ -31,7 +129,7 @@
       "category": "math",
       "model": "claude-haiku-4-5-20251001",
       "pass": true,
-      "ms": 802,
+      "ms": 703,
       "usage": {
         "input_tokens": 26,
         "cache_creation_input_tokens": 0,
@@ -45,6 +143,7 @@
         "inference_geo": "not_available"
       },
       "stopReason": "end_turn",
+      "temperature": 0,
       "output": "400"
     },
     {
@@ -52,7 +151,7 @@
       "category": "math",
       "model": "claude-haiku-4-5-20251001",
       "pass": true,
-      "ms": 752,
+      "ms": 654,
       "usage": {
         "input_tokens": 52,
         "cache_creation_input_tokens": 0,
@@ -66,6 +165,7 @@
         "inference_geo": "not_available"
       },
       "stopReason": "end_turn",
+      "temperature": 0,
       "output": "87.5"
     },
     {
@@ -73,7 +173,7 @@
       "category": "instruction",
       "model": "claude-haiku-4-5-20251001",
       "pass": true,
-      "ms": 841,
+      "ms": 691,
       "usage": {
         "input_tokens": 33,
         "cache_creation_input_tokens": 0,
@@ -87,7 +187,806 @@
         "inference_geo": "not_available"
       },
       "stopReason": "end_turn",
+      "temperature": 0,
       "output": "3"
+    },
+    {
+      "taskId": "extract_date",
+      "category": "extraction",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 691,
+      "usage": {
+        "input_tokens": 81,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 10,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "2024-03-07"
+    },
+    {
+      "taskId": "logic_liars",
+      "category": "reasoning",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 671,
+      "usage": {
+        "input_tokens": 57,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 4,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "Bob"
+    },
+    {
+      "taskId": "classify_sentiment",
+      "category": "classification",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 667,
+      "usage": {
+        "input_tokens": 49,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 5,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "Negative"
+    },
+    {
+      "taskId": "follow_format_primes",
+      "category": "instruction",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 646,
+      "usage": {
+        "input_tokens": 29,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 9,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "2,3,5"
+    },
+    {
+      "taskId": "constraint_no_e",
+      "category": "instruction",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": false,
+      "ms": 827,
+      "usage": {
+        "input_tokens": 39,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 13,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "The vast blue sky stretches across our world."
+    },
+    {
+      "taskId": "exact_word_count",
+      "category": "instruction",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 728,
+      "usage": {
+        "input_tokens": 19,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 9,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "Water falls from cloudy sky"
+    },
+    {
+      "taskId": "json_emit",
+      "category": "json",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 624,
+      "usage": {
+        "input_tokens": 53,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 17,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "{\"name\": \"winthrop\", \"version\": 1}"
+    },
+    {
+      "taskId": "js_reverse_words",
+      "category": "code",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 1057,
+      "usage": {
+        "input_tokens": 53,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 33,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "```javascript\nfunction reverseWords(s) {\n  return s.split(' ').reverse().join(' ');\n}\n```"
+    },
+    {
+      "taskId": "js_sum_divisibles",
+      "category": "code",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 977,
+      "usage": {
+        "input_tokens": 55,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 85,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "temperature": 0,
+      "output": "```javascript\nfunction sumDivisibles(n) {\n  let sum = 0;\n  for (let i = 1; i < n; i++) {\n    if (i % 3 === 0 || i % 5 === 0) {\n      sum += i;\n    }\n  }\n  return sum;\n}\n```"
+    },
+    {
+      "taskId": "sanity_arith",
+      "category": "math",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 2392,
+      "usage": {
+        "input_tokens": 28,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 29,
+        "output_tokens_details": {
+          "thinking_tokens": 26
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "400"
+    },
+    {
+      "taskId": "math_avg_speed",
+      "category": "math",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 2561,
+      "usage": {
+        "input_tokens": 63,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 30,
+        "output_tokens_details": {
+          "thinking_tokens": 24
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "87.5"
+    },
+    {
+      "taskId": "count_letters",
+      "category": "instruction",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 1241,
+      "usage": {
+        "input_tokens": 38,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 3,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "3"
+    },
+    {
+      "taskId": "extract_date",
+      "category": "extraction",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 2135,
+      "usage": {
+        "input_tokens": 105,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 8,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "2024-03-07"
+    },
+    {
+      "taskId": "logic_liars",
+      "category": "reasoning",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 2413,
+      "usage": {
+        "input_tokens": 71,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 157,
+        "output_tokens_details": {
+          "thinking_tokens": 151
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "Bob"
+    },
+    {
+      "taskId": "classify_sentiment",
+      "category": "classification",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 1301,
+      "usage": {
+        "input_tokens": 66,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 5,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "Negative"
+    },
+    {
+      "taskId": "follow_format_primes",
+      "category": "instruction",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 2184,
+      "usage": {
+        "input_tokens": 37,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 7,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "2,3,5"
+    },
+    {
+      "taskId": "constraint_no_e",
+      "category": "instruction",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 6519,
+      "usage": {
+        "input_tokens": 51,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 514,
+        "output_tokens_details": {
+          "thinking_tokens": 495
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "A gray sky pours rain as night falls fast."
+    },
+    {
+      "taskId": "exact_word_count",
+      "category": "instruction",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 1545,
+      "usage": {
+        "input_tokens": 26,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 40,
+        "output_tokens_details": {
+          "thinking_tokens": 22
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "Wet cold soothing gentle rhythmic"
+    },
+    {
+      "taskId": "json_emit",
+      "category": "json",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 1337,
+      "usage": {
+        "input_tokens": 63,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 18,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "{\"name\": \"winthrop\", \"version\": 1}"
+    },
+    {
+      "taskId": "js_reverse_words",
+      "category": "code",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 2395,
+      "usage": {
+        "input_tokens": 72,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 40,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "```javascript\nfunction reverseWords(s) {\n  return s.split(' ').reverse().join(' ');\n}\n```"
+    },
+    {
+      "taskId": "js_sum_divisibles",
+      "category": "code",
+      "model": "claude-sonnet-5",
+      "pass": true,
+      "ms": 2633,
+      "usage": {
+        "input_tokens": 72,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 93,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "```javascript\nfunction sumDivisibles(n) {\n  let sum = 0;\n  for (let i = 1; i < n; i++) {\n    if (i % 3 === 0 || i % 5 === 0) {\n      sum += i;\n    }\n  }\n  return sum;\n}\n```"
+    },
+    {
+      "taskId": "sanity_arith",
+      "category": "math",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 3531,
+      "usage": {
+        "input_tokens": 28,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 20,
+        "output_tokens_details": {
+          "thinking_tokens": 17
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "400"
+    },
+    {
+      "taskId": "math_avg_speed",
+      "category": "math",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 3358,
+      "usage": {
+        "input_tokens": 63,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 31,
+        "output_tokens_details": {
+          "thinking_tokens": 26
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "87.5"
+    },
+    {
+      "taskId": "count_letters",
+      "category": "instruction",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 2740,
+      "usage": {
+        "input_tokens": 38,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 43,
+        "output_tokens_details": {
+          "thinking_tokens": 40
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "3"
+    },
+    {
+      "taskId": "extract_date",
+      "category": "extraction",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 1817,
+      "usage": {
+        "input_tokens": 105,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 8,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "2024-03-07"
+    },
+    {
+      "taskId": "logic_liars",
+      "category": "reasoning",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 2197,
+      "usage": {
+        "input_tokens": 71,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 111,
+        "output_tokens_details": {
+          "thinking_tokens": 106
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "Bob"
+    },
+    {
+      "taskId": "classify_sentiment",
+      "category": "classification",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 2630,
+      "usage": {
+        "input_tokens": 66,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 22,
+        "output_tokens_details": {
+          "thinking_tokens": 17
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "Negative"
+    },
+    {
+      "taskId": "follow_format_primes",
+      "category": "instruction",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 3013,
+      "usage": {
+        "input_tokens": 37,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 14,
+        "output_tokens_details": {
+          "thinking_tokens": 7
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "2,3,5"
+    },
+    {
+      "taskId": "constraint_no_e",
+      "category": "instruction",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 4617,
+      "usage": {
+        "input_tokens": 51,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 174,
+        "output_tokens_details": {
+          "thinking_tokens": 157
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "A vast sky holds bright stars tonight."
+    },
+    {
+      "taskId": "exact_word_count",
+      "category": "instruction",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 2348,
+      "usage": {
+        "input_tokens": 26,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 34,
+        "output_tokens_details": {
+          "thinking_tokens": 22
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "Soft gray water falling gently"
+    },
+    {
+      "taskId": "json_emit",
+      "category": "json",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 2051,
+      "usage": {
+        "input_tokens": 63,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 18,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "{\"name\": \"winthrop\", \"version\": 1}"
+    },
+    {
+      "taskId": "js_reverse_words",
+      "category": "code",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 1925,
+      "usage": {
+        "input_tokens": 72,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 40,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "```javascript\nfunction reverseWords(s) {\n  return s.split(' ').reverse().join(' ');\n}\n```"
+    },
+    {
+      "taskId": "js_sum_divisibles",
+      "category": "code",
+      "model": "claude-opus-5",
+      "pass": true,
+      "ms": 3731,
+      "usage": {
+        "input_tokens": 72,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 93,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "stopReason": "end_turn",
+      "temperature": null,
+      "output": "```javascript\nfunction sumDivisibles(n) {\n  let sum = 0;\n  for (let i = 1; i < n; i++) {\n    if (i % 3 === 0 || i % 5 === 0) {\n      sum += i;\n    }\n  }\n  return sum;\n}\n```"
     }
   ]
 }

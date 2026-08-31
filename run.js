@@ -32,7 +32,7 @@ function parseArgs(argv) {
 async function runTask(model, task) {
   const started = Date.now()
   try {
-    const { text, usage, stopReason } = await complete({ model, prompt: task.prompt })
+    const { text, usage, stopReason, temperature } = await complete({ model, prompt: task.prompt })
     return {
       taskId: task.id,
       category: task.category,
@@ -41,6 +41,7 @@ async function runTask(model, task) {
       ms: Date.now() - started,
       usage,
       stopReason,
+      temperature,
       output: text.slice(0, 2000),
     }
   } catch (err) {
