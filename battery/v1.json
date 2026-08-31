@@ -1,0 +1,93 @@
+{
+  "version": "v1",
+  "tasks": [
+    {
+      "id": "sanity_arith",
+      "category": "math",
+      "prompt": "Compute 17 * 23 + 9. Reply with only the number.",
+      "scorer": { "type": "numeric", "expected": 400 }
+    },
+    {
+      "id": "math_avg_speed",
+      "category": "math",
+      "prompt": "A train travels 210 miles in 3 hours, then another 140 miles in 1 hour. What is its average speed in miles per hour over the whole trip? Reply with only the number.",
+      "scorer": { "type": "numeric", "expected": 87.5, "tolerance": 0.01 }
+    },
+    {
+      "id": "count_letters",
+      "category": "instruction",
+      "prompt": "How many times does the letter 'r' appear in the word 'strawberry'? Reply with only the number.",
+      "scorer": { "type": "numeric", "expected": 3 }
+    },
+    {
+      "id": "extract_date",
+      "category": "extraction",
+      "prompt": "From the following text, extract the delivery date and reply with only that date in YYYY-MM-DD format.\n\nText: \"Thanks for your order! It shipped from our Reno warehouse on the 2nd of March, 2024, and is expected to arrive Thursday, March 7th, 2024, before 8pm.\"",
+      "scorer": { "type": "exact", "expected": "2024-03-07" }
+    },
+    {
+      "id": "logic_liars",
+      "category": "reasoning",
+      "prompt": "Alice says: 'Bob is a liar.' Bob says: 'Alice and I are both liars.' Each person is either a truth-teller or a liar. Who is the liar? Reply with only the name.",
+      "scorer": { "type": "exact", "expected": "Bob" }
+    },
+    {
+      "id": "classify_sentiment",
+      "category": "classification",
+      "prompt": "Classify the sentiment of this review as positive or negative. Reply with one word.\n\nReview: \"I wanted to love this, and the packaging really is gorgeous, but it broke on the second day.\"",
+      "scorer": { "type": "exact", "expected": "negative" }
+    },
+    {
+      "id": "follow_format_primes",
+      "category": "instruction",
+      "prompt": "List the first three prime numbers as a comma-separated list with no spaces. Reply with only the list.",
+      "scorer": { "type": "regex", "pattern": "^\\s*2,3,5\\s*$" }
+    },
+    {
+      "id": "constraint_no_e",
+      "category": "instruction",
+      "prompt": "Write a single sentence about the sky, at least six words long, that does not contain the letter 'e' anywhere. Reply with only the sentence.",
+      "scorer": { "type": "regex", "pattern": "^(?=[^eE]*$)(?=.*sky).{20,}$", "flags": "s" }
+    },
+    {
+      "id": "exact_word_count",
+      "category": "instruction",
+      "prompt": "Reply with exactly five words describing rain. No punctuation.",
+      "scorer": { "type": "regex", "pattern": "^\\s*\\S+(?:\\s+\\S+){4}\\s*$" }
+    },
+    {
+      "id": "json_emit",
+      "category": "json",
+      "prompt": "Output a JSON object with exactly two keys: 'name' with the string value 'winthrop', and 'version' with the number value 1. Reply with only the JSON, no code fences.",
+      "scorer": { "type": "json_eq", "expected": { "name": "winthrop", "version": 1 } }
+    },
+    {
+      "id": "js_reverse_words",
+      "category": "code",
+      "prompt": "Write a JavaScript function named reverseWords(s) that takes a string of words separated by single spaces and returns the words in reverse order, joined by single spaces. Reply with only the code in a fenced code block.",
+      "scorer": {
+        "type": "jsfunc",
+        "fn": "reverseWords",
+        "vectors": [
+          [["one two three"], "three two one"],
+          [["solo"], "solo"],
+          [["a b c d"], "d c b a"]
+        ]
+      }
+    },
+    {
+      "id": "js_sum_divisibles",
+      "category": "code",
+      "prompt": "Write a JavaScript function named sumDivisibles(n) that returns the sum of all positive integers strictly less than n that are divisible by 3 or 5. Reply with only the code in a fenced code block.",
+      "scorer": {
+        "type": "jsfunc",
+        "fn": "sumDivisibles",
+        "vectors": [
+          [[10], 23],
+          [[20], 78],
+          [[1], 0]
+        ]
+      }
+    }
+  ]
+}

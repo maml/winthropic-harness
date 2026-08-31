@@ -1,0 +1,93 @@
+{
+  "date": "2026-08-31",
+  "ranAt": "2026-08-31T16:10:29.789Z",
+  "battery": "v1",
+  "models": [
+    "claude-haiku-4-5-20251001"
+  ],
+  "byModel": {
+    "claude-haiku-4-5-20251001": {
+      "passed": 3,
+      "total": 3,
+      "byCategory": {
+        "math": {
+          "passed": 2,
+          "total": 2
+        },
+        "instruction": {
+          "passed": 1,
+          "total": 1
+        }
+      },
+      "tokens": {
+        "in": 111,
+        "out": 17
+      }
+    }
+  },
+  "results": [
+    {
+      "taskId": "sanity_arith",
+      "category": "math",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 802,
+      "usage": {
+        "input_tokens": 26,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 5,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "output": "400"
+    },
+    {
+      "taskId": "math_avg_speed",
+      "category": "math",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 752,
+      "usage": {
+        "input_tokens": 52,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 7,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "output": "87.5"
+    },
+    {
+      "taskId": "count_letters",
+      "category": "instruction",
+      "model": "claude-haiku-4-5-20251001",
+      "pass": true,
+      "ms": 841,
+      "usage": {
+        "input_tokens": 33,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 5,
+        "service_tier": "standard",
+        "inference_geo": "not_available"
+      },
+      "stopReason": "end_turn",
+      "output": "3"
+    }
+  ]
+}
