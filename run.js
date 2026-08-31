@@ -118,6 +118,19 @@ const outFile = join(outDir, `${date}.json`)
 await writeFile(outFile, JSON.stringify(run, null, 2) + '\n')
 console.log(`wrote ${outFile}`)
 
+if (process.env.WINTHROPIC_INGEST_URL && process.env.WINTHROPIC_INGEST_TOKEN) {
+  const res = await fetch(`${process.env.WINTHROPIC_INGEST_URL}/api/ingest`, {
+    method: 'POST',
+    headers: {
+      authorization: `Bearer ${process.env.WINTHROPIC_INGEST_TOKEN}`,
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify(run),
+  })
+  if (!res.ok) console.error(`site ingest failed: HTTP ${res.status} ${await res.text()}`)
+  else console.log(`pushed run to site (${run.date})`)
+}
+
 if (args.graph) {
   const summaryLine = Object.entries(byModel)
     .map(([model, m]) => `${model} ${m.passed}/${m.total}`)
