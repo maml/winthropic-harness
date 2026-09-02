@@ -15,6 +15,11 @@ const DEFAULT_MODELS = [
   'claude-haiku-4-5-20251001',
   'claude-sonnet-5',
   'claude-opus-5',
+  // Fable added 2026-09-02 (both generations answer under the Winthropic
+  // workspace key; Mythos is not offered to it). Additive: existing series
+  // are untouched, each model is its own trace.
+  'claude-fable-5',
+  'claude-fable-5-1',
 ]
 
 function parseArgs(argv) {
