@@ -1,0 +1,13 @@
+{
+  "name": "winthropic-harness",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The Winthropic Index eval harness: a versioned, deterministic battery run daily against Claude models to measure drift.",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "eval": "node run.js"
+  }
+}
