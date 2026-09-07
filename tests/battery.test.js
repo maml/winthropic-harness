@@ -52,3 +52,14 @@ test('a known-good answer passes each non-jsfunc task scorer', () => {
     assert.equal(score(task, goldens[task.id]), true, task.id)
   }
 })
+
+test('the models list normalizes to id, displayName, createdAt and drops junk', async () => {
+  const { normalizeModels } = await import('../lib/anthropic.js')
+  const out = normalizeModels({ data: [{ id: 'claude-sonnet-5', display_name: 'Claude Sonnet 5', created_at: '2026-05-01T00:00:00Z' }, { id: 'claude-opus-5' }, { display_name: 'no id' }, null] })
+  assert.deepEqual(out, [
+    { id: 'claude-sonnet-5', displayName: 'Claude Sonnet 5', createdAt: '2026-05-01T00:00:00Z' },
+    { id: 'claude-opus-5', displayName: null, createdAt: null },
+  ])
+  assert.deepEqual(normalizeModels(null), [])
+  assert.deepEqual(normalizeModels({ data: 'nope' }), [])
+})

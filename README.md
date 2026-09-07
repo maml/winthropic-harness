@@ -33,6 +33,7 @@ The point of the Index is longitudinal comparison, so the request shape never ch
 - Temperature 0 where the model accepts it, fixed `max_tokens`, no system prompt. Claude 5 models reject `temperature`, so they run at default sampling and each result records `temperature: null`.
 - The battery is versioned (`battery/v1.json`). Results are only comparable within one version. Changing a task means a new battery file, never an edit in place.
 - Scoring is deterministic (`lib/score.js`): exact match, numeric with tolerance, regex, JSON equality, or a fixed set of test vectors run against returned code. No model grades another model.
+- Each run record also carries `available`: the models list the API served this key that day (id, display name, created date), polled once per run at zero token cost. It feeds the lifecycle board at winthropic.com/lifecycle. A day the poll fails simply omits the field.
 - Runs under `data/runs/` are append-only. A day where every call failed is written as `<date>.failed.json` and never replaces a good record.
 
 Because sampling is not fully deterministic even at temperature 0, expect an occasional one-task difference between your replay and the published run. A consistent gap across several days is the signal the Index exists to catch.

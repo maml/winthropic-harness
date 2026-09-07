@@ -5,7 +5,7 @@
 import { readFile, mkdir, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { complete } from './lib/anthropic.js'
+import { complete, listModels } from './lib/anthropic.js'
 import { score } from './lib/score.js'
 import { writeRunDoc } from './lib/graph.js'
 
@@ -108,6 +108,12 @@ if (results.every((r) => r.error)) {
   process.exit(1)
 }
 
+// The models list the API serves this key today (zero tokens). Additive
+// field; older run files simply lack it.
+const available = await listModels()
+if (available) console.log(`models list: ${available.length} ids served to this key`)
+else console.error('models list: unavailable today (run record omits it)')
+
 const run = {
   date,
   ranAt: new Date().toISOString(),
@@ -115,6 +121,7 @@ const run = {
   models,
   byModel,
   results,
+  ...(available ? { available } : {}),
 }
 
 const outDir = join(here, 'data', 'runs')
