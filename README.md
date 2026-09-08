@@ -60,4 +60,4 @@ This repo is a read-only mirror of the `harness/` directory in the private Winth
 
 ## License
 
-MIT.
+MIT for this code. The readings the harness produces, and every series winthropic.com derives from them, are published under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Failure outputs in the run records are model text generated under Anthropic's terms; the data license covers the record, not a grant to train on Claude outputs.
